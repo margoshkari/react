@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "github": "^14.0.0",
+    "js": "^0.1.0",
+    "node": "^16.17.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
