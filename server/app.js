@@ -3,7 +3,8 @@ const app = express();
 const port = process.env.PORT || 3001;
 const Person = require("./personModule.js");
 
-app.get("/api", (req, res) => {
+app.get(`/people`, (req, res) => {
+  console.log("ssss");
   res.json({ people: Person.GetPeople() });
 });
 
