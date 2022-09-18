@@ -4,23 +4,21 @@ import React from "react";
 function App() {
   const [data, setData] = React.useState([]);
   React.useEffect(() => {
-    fetch(`/people`)
+    fetch(`/products`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.people);
-        setData(data.people);
+        console.log(data.products);
+        setData(data.products);
       });
-  });
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
-        {data.map((person, index) => {
+        {data.map((products, index) => {
           return (
-            <div key={index}>
+            <div>
               <p>
-                {person.name} {person.surname}
-                <br />
-                age: {person.age}
+                {products.ProductName} - {products.Price}$
               </p>
               <hr />
             </div>
