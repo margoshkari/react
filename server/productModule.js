@@ -13,14 +13,25 @@ mongoose.connect(
 );
 
 const Product = mongoose.model("products", productScheme);
-
+class Goods {
+  constructor(productName, price) {
+    this.ProductName = productName;
+    this.Price = price;
+  }
+}
 async function GetProduct() {
   var product = await Product.find({});
   return product;
 }
 async function GetFilteredProduct(productname) {
-  var product = await Product.find({ ProductName: productname });
-  return product;
+  var allProducts = await GetProduct();
+  var filteredProducts = [];
+  allProducts.map((product, index) => {
+    if (product.ProductName.toLowerCase().includes(productname.toLowerCase())) {
+      filteredProducts.push(new Goods(product.ProductName, product.Price));
+    }
+  });
+  return filteredProducts;
 }
 module.exports = {
   GetProduct,
