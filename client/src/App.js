@@ -27,6 +27,10 @@ function App() {
     setValue(evt.target.value);
   }
 
+  function clickedProduct(name) {
+    console.log(name);
+  }
+
   return (
     <div className="App">
       <div className="filter">
@@ -42,7 +46,11 @@ function App() {
       <header className="App-header">
         {data.map((products, index) => {
           return (
-            <div className="productlist" key={index}>
+            <div
+              className="productlist"
+              key={index}
+              onClick={(e) => clickedProduct(products.ProductName)}
+            >
               <p>
                 {products.ProductName} - {products.Price}$
               </p>
