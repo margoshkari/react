@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -14,8 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin-top: 3%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +36,34 @@
   to {
     transform: rotate(360deg);
   }
+}
+.productlist{
+  width: 200px;
+}
+.productlist:hover{
+background-color: rgb(118, 118, 143);
+}
+input{
+  height: 30px;
+  width: 150px;
+  border-radius: 5px;
+  border-style: none;
+  font-size: 17px;
+}
+button{
+  background-color: rgb(197, 197, 230);
+  border-radius: 5px;
+  border-style: none;
+  width: 100px;
+  height: 30px;
+}
+button:hover{
+  background-color: rgb(167, 167, 192);
+}
+.filter{
+  width: 100%; 
+  height: 200px; 
+  align-items: center; 
+  justify-content: center;  
+  display: flex;
 }

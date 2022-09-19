@@ -18,6 +18,11 @@ async function GetProduct() {
   var product = await Product.find({});
   return product;
 }
+async function GetFilteredProduct(productname) {
+  var product = await Product.find({ ProductName: productname });
+  return product;
+}
 module.exports = {
   GetProduct,
+  GetFilteredProduct,
 };
